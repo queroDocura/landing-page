@@ -14,7 +14,9 @@ function NavbarLandingPage() {
         <Link to="/marketplace">Marketplace</Link>
         <Link to="/calculadora">Calculadora de doces</Link>
         <Link to="/blog">Blog</Link>
-        <img src={LogoWhiteBg} alt="Logo Quero Doçura" />
+        <div>
+          <img src={LogoWhiteBg} alt="Logo Quero Doçura" />
+        </div>
         <Link to="/banco-de-dados">Banco de dados</Link>
         <Link to="/quem-somos">Quem somos</Link>
         <Link to="/contato">Contato</Link>

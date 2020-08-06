@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import PatternWhite from '../../assets/pattern-white.png';
+import {Devices} from '../../app/style';
 
 export const Container = styled.div`
   width: 100vw;
@@ -18,10 +19,38 @@ export const Background = styled.div`
   height: 100vh;
   filter: sepia(60%) blur(1px) opacity(30%);
   background-image: url(${PatternWhite});
+
+  @media ${Devices.tablet} {
+    display: none;
+  }
 `;
 
 export const Navigation = styled.nav`
   display: none;
+  height: 12rem;
+  box-sizing: border-box;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+
+  > div > img {
+    width: 10rem;
+  }
+
+  > a {
+    font-size: 1.2rem;
+    margin: 0 25px;
+  }
+
+  @media ${Devices.tablet} {
+    display: flex;
+  }
+
+  @media ${Devices.desktopL} {
+    > a {
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 export const CallToAction = styled.div`
@@ -49,5 +78,9 @@ export const CallToAction = styled.div`
 
   > div > h1 {
     font-weight: 600;
+  }
+
+  @media ${Devices.tablet} {
+    display: none;
   }
 `;
