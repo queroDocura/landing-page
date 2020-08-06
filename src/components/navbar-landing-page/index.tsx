@@ -1,16 +1,43 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
-function Navbar() {
+import {Container, Background, Navigation, CallToAction} from './styles';
+import LogoWhiteBg from '../../assets/logo-white-bg.png';
+
+import Button from '../button';
+
+function NavbarLandingPage() {
   return (
-    <div>
-      <nav>
-        <a href="">Marketplace</a>
-        <a href="">Calculadora de doces</a>
-        <a href="">Blog</a>
-        <a href="">Banco de dados</a>
-        <a href="">Quem somos</a>
-        <a href="">Contato</a>
-      </nav>
-    </div>
+    <Container>
+      <Background />
+      <Navigation>
+        <Link to="/marketplace">Marketplace</Link>
+        <Link to="/calculadora">Calculadora de doces</Link>
+        <Link to="/blog">Blog</Link>
+        <img src={LogoWhiteBg} alt="Logo Quero Doçura" />
+        <Link to="/banco-de-dados">Banco de dados</Link>
+        <Link to="/quem-somos">Quem somos</Link>
+        <Link to="/contato">Contato</Link>
+      </Navigation>
+      <CallToAction>
+        <div>
+          <h1>O melhor portal de doces</h1>
+        </div>
+        <div>
+          <img src={LogoWhiteBg} alt="Logo Quero Doçura" />
+        </div>
+        <div>
+          <Button
+            name="Acessar o Marketplace"
+            type="button"
+            loading={false}
+            _onClick={() => alert('working')}
+            filled
+          />
+        </div>
+      </CallToAction>
+    </Container>
   );
 }
+
+export default NavbarLandingPage;
