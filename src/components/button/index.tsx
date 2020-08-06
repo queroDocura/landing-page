@@ -8,7 +8,7 @@ interface Props {
   _onClick: () => void;
   filled: boolean;
   maxWidth?: string;
-  loading: boolean;
+  loading?: boolean;
   whiteLoading?: boolean;
   color?: string;
   type: 'button' | 'reset' | 'submit';

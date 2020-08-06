@@ -11,6 +11,10 @@ export const Container = styled.div`
   > div {
     text-align: center;
   }
+
+  @media ${Devices.tablet} {
+    height: auto;
+  }
 `;
 
 export const Background = styled.div`

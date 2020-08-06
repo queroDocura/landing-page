@@ -6,7 +6,7 @@ import LogoWhiteBg from '../../assets/logo-white-bg.png';
 
 import Button from '../button';
 
-function NavbarLandingPage() {
+const NavbarLandingPage: React.FC = () => {
   return (
     <Container>
       <Background />
@@ -40,6 +40,6 @@ function NavbarLandingPage() {
       </CallToAction>
     </Container>
   );
-}
+};
 
 export default NavbarLandingPage;
