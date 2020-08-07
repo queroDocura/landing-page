@@ -1,12 +1,19 @@
 import styled from 'styled-components';
+import {Devices} from '../../app/style';
 
-export const ImageFullWidth = styled.div`
+export const CardContainer = styled.div`
+  box-sizing: border-box;
   width: 100vw;
-  height: 20rem;
+  height: auto;
+  padding: 10px;
 
-  > img {
-    width: 100vw;
-    height: 28rem;
-    object-fit: cover;
+  > h2 {
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  @media ${Devices.tablet} {
+    padding: 30px 20%;
   }
 `;

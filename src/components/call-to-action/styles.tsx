@@ -27,7 +27,7 @@ export const Container = styled.section`
   }
 
   @media ${Devices.tablet} {
-    height: 25rem;
+    min-height: 25rem;
     padding: 30px 25%;
   }
 `;
