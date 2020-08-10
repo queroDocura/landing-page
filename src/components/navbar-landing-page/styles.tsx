@@ -19,6 +19,8 @@ export const Container = styled.div`
 
 export const Background = styled.div`
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   filter: sepia(60%) blur(1px) opacity(30%);
@@ -26,6 +28,7 @@ export const Background = styled.div`
 
   @media ${Devices.tablet} {
     display: none;
+    //height: 12rem;
   }
 `;
 
@@ -36,6 +39,7 @@ export const Navigation = styled.nav`
   padding: 30px;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
 
   > div > img {
     width: 10rem;
