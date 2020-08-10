@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import PatternWhite from '../../assets/pattern-white.png';
-import {Devices} from '../../app/style';
+import {Colors, Devices} from '../../app/style';
 
 export const Container = styled.div`
   width: 100vw;
@@ -44,6 +44,11 @@ export const Navigation = styled.nav`
   > a {
     font-size: 1.2rem;
     margin: 0 25px;
+  }
+
+  > .selected {
+    color: ${Colors.beige};
+    font-weight: 800;
   }
 
   @media ${Devices.tablet} {

@@ -18,6 +18,27 @@ export const Container = styled.footer`
     margin-bottom: 20px;
   }
 
+  > section > span {
+    line-height: 2.2rem;
+  }
+
+  > section > .email-span {
+    visibility: hidden;
+  }
+
+  > section > .email-link {
+    margin: 0.5rem 0;
+    color: ${Colors.beige};
+    display: flex;
+    visibility: visible;
+    align-items: center;
+    justify-content: center;
+  }
+
+  > section > .email-link > svg {
+    margin: 0 0.5rem;
+  }
+
   > section > div {
     display: flex;
     justify-content: center;
@@ -25,8 +46,9 @@ export const Container = styled.footer`
   }
 
   > section > div > div {
-    margin: 0 10px;
+    margin: 0 10px 2rem;
   }
+
   @media ${Devices.tablet} {
     > section {
       flex: 0 0 50%;
@@ -38,6 +60,14 @@ export const Container = styled.footer`
 
     > section > h2 {
       visibility: visible;
+    }
+
+    > section > .email-span {
+      visibility: visible;
+    }
+
+    > section > .email-link {
+      visibility: hidden;
     }
   }
 `;

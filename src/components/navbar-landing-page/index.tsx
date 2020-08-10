@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
+import {IoIosArrowRoundBack} from 'react-icons/all';
 
 import {Container, Background, Navigation, CallToAction} from './styles';
 import LogoWhiteBg from '../../assets/logo-white-bg.png';
@@ -11,16 +12,29 @@ const NavbarLandingPage: React.FC = () => {
     <Container>
       <Background />
       <Navigation>
-        <Link to="/marketplace">Marketplace</Link>
-        <Link to="/calculadora">Calculadora de doces</Link>
-        <Link to="/blog">Blog</Link>
+        <NavLink to="/marketplace" activeClassName="selected">
+          Marketplace
+        </NavLink>
+        <NavLink to="/calculadora" activeClassName="selected">
+          Calculadora de doces
+        </NavLink>
+        <NavLink to="/blog" activeClassName="selected">
+          Blog
+        </NavLink>
         <div>
           <img src={LogoWhiteBg} alt="Logo Quero Doçura" />
         </div>
-        <Link to="/banco-de-dados">Banco de dados</Link>
-        <Link to="/quem-somos">Quem somos</Link>
-        <Link to="/contato">Contato</Link>
+        <NavLink to="/banco-de-dados" activeClassName="selected">
+          Banco de dados
+        </NavLink>
+        <NavLink to="/quem-somos" activeClassName="selected">
+          Quem somos
+        </NavLink>
+        <NavLink to="/contato" activeClassName="selected">
+          Contato
+        </NavLink>
       </Navigation>
+
       <CallToAction>
         <div>
           <h1>O melhor portal de doces</h1>
