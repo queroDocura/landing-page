@@ -1,6 +1,5 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {IoIosArrowRoundBack} from 'react-icons/all';
 
 import {Container, Background, Navigation, CallToAction} from './styles';
 import LogoWhiteBg from '../../assets/logo-white-bg.png';

@@ -1,6 +1,9 @@
-import React from 'react';
+// @ts-nocheck
+import React, {useEffect, useState} from 'react';
+import {Helmet} from 'react-helmet';
 
 import {CardContainer} from './styles';
+import {firebaseDatabase} from '../../app/firebase-config';
 
 import NavbarLandingPage from '../../components/navbar-landing-page';
 import ImageFullWidth from '../../components/image-fullwidth';
@@ -9,15 +12,44 @@ import CardWithPhoto from '../../components/photo-card';
 import Footer from '../../components/footer';
 
 function LandingPage() {
+  const [banners, setBanners] = useState([]);
+
+  function searchBanners(param) {
+    const banner = banners.filter((obj) => obj.typeCTA === param);
+
+    return banner[0]?.url;
+  }
+
+  useEffect(() => {
+    firebaseDatabase
+      .collection('banners')
+      .where('systemTarget', '==', 'landing-page')
+      .get()
+      .then((res) => {
+        const arr = [];
+
+        res.forEach((doc) => {
+          const obj = doc.data();
+
+          obj.id = doc.id;
+
+          arr.push(obj);
+        });
+
+        setBanners(arr);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
+      <Helmet>
+        <title>Quero Doçuras</title>
+      </Helmet>
       <NavbarLandingPage />
       {window.innerWidth > 768 ? (
         <>
-          <ImageFullWidth
-            url="https://picsum.photos/2000/3000?random=1"
-            alt="Imagem Um"
-          />
+          <ImageFullWidth url={searchBanners('mp')} alt="Marketplace Banner" />
           <CallToAction
             title="Acesse nosso"
             spotlight="MarketPlace"
@@ -29,8 +61,8 @@ function LandingPage() {
         </>
       ) : null}
       <ImageFullWidth
-        url="https://picsum.photos/2000/3000?random=2"
-        alt="Imagem Dois"
+        url={searchBanners('cd')}
+        alt="Calculadora de doces banner"
       />
       <CallToAction
         title="Conheça tambem nossa"
@@ -40,10 +72,7 @@ function LandingPage() {
         btnFunction={() => alert('base de dados')}
         btnFilled
       />
-      <ImageFullWidth
-        url="https://picsum.photos/2000/3000?random=3"
-        alt="Imagem Tres"
-      />
+      <ImageFullWidth url={searchBanners('db')} alt="Base de dados banner" />
       <CallToAction
         title="Vai fazer uma festa? Use nossa"
         spotlight="Calculadora de Doces"
