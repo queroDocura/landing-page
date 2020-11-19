@@ -1,10 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 import {Container, Content} from './styles';
 
 interface CardWithPhotoProps {
-  rowDirection?: string;
+  $inverse?: boolean;
   title: string;
   desc: string;
   urlToRedirect: string;
@@ -13,25 +12,25 @@ interface CardWithPhotoProps {
 }
 
 const CardWithPhoto: React.FC<CardWithPhotoProps> = (props) => {
-  const {rowDirection, title, desc, urlToRedirect, imgUrl, imgDesc} = props;
+  const {$inverse, title, desc, urlToRedirect, imgUrl, imgDesc} = props;
 
   return (
-    <Container rowDirection={rowDirection}>
-      <div>
-        <img src={imgUrl} alt={imgDesc} />
-      </div>
-      <Content>
+    <a href={urlToRedirect}>
+      <Container $inverse={$inverse}>
         <div>
-          <h1>{title}</h1>
-          <p>{desc}</p>
+          <img src={imgUrl} alt={imgDesc} />
         </div>
-        <div>
-          <Link to={urlToRedirect}>
-            <b>Ver mais</b>
-          </Link>
-        </div>
-      </Content>
-    </Container>
+        <Content>
+          <div>
+            <h1>{title}</h1>
+            <p>{desc}</p>
+          </div>
+          <div>
+            <strong>Ver mais</strong>
+          </div>
+        </Content>
+      </Container>
+    </a>
   );
 };
 

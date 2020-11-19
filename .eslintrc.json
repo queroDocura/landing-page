@@ -1,38 +1,53 @@
 {
-    "env": {
-        "browser": true,
-        "es2020": true
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "airbnb",
-        "prettier",
-        "prettier/@typescript-eslint",
-        "prettier/react"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 11,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "@typescript-eslint",
-        "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": "error",
-      "import/extensions": 0,
-      "import/no-unresolved": 0,
-      "no-nested-ternary": 0,
-      "react/jsx-props-no-spreading disable": 0,
-      "react/prop-types": 0,
-      "react/jsx-filename-extension": [
-        2,
-        {"extensions": [".js", ".jsx", ".ts", ".tsx"]}
-      ]
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
+  "rules": {
+    "no-use-before-define": "off",
+    "no-console": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
+    "react/jsx-filename-extension": [1, {"extensions": [".tsx"]}],
+    "import/prefer-default-export": "off",
+    "camelcase": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "prettier/prettier": "error",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
     }
+  }
 }

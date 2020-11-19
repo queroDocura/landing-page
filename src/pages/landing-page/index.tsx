@@ -13,6 +13,7 @@ import Footer from '../../components/footer';
 
 function LandingPage() {
   const [banners, setBanners] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   function searchBanners(param) {
     const banner = banners.filter((obj) => obj.typeCTA === param);
@@ -41,13 +42,31 @@ function LandingPage() {
       .catch((err) => console.log(err));
   }, []);
 
+  useEffect(() => {
+    firebaseDatabase
+      .collection('posts')
+      .limit(2)
+      .get()
+      .then((response) => {
+        if (response.empty) return;
+
+        const array = [];
+        response.forEach((post) => {
+          array.push({...post.data(), id: post.id});
+        });
+
+        setPosts(array);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <>
       <Helmet>
         <title>Quero Doçuras</title>
       </Helmet>
       <NavbarLandingPage />
-      {window.innerWidth > 768 ? (
+      {/* {window.innerWidth > 768 ? (
         <>
           <ImageFullWidth url={searchBanners('mp')} alt="Marketplace Banner" />
           <CallToAction
@@ -59,47 +78,45 @@ function LandingPage() {
             btnFilled
           />
         </>
-      ) : null}
+      ) : null} */}
+      <ImageFullWidth url={searchBanners('db')} alt="Reviews banner" />
+      <CallToAction
+        title="Conheça tambem nossos"
+        spotlight="Reviews"
+        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet, ante eget gravida pulvinar, erat ligula mattis tortor, id mollis ex libero ac eros. Nulla finibus nulla eu mauris lacinia feugiat. Vestibulum efficitur, lacus id mollis semper, nunc turpis consequat felis, eget mattis dolor nulla eget turpis. Aliquam at augue suscipit, aliquet massa ut, consequat lorem. Quisque facilisis mi eu venenatis lobortis. Morbi molestie lacus quam, at sodales dui lacinia sed."
+        btnName="Ver Reviews"
+        btnFunction={() => alert('base de dados')}
+        urlToRedirect="https://reviews.querodocuras.com.br"
+        btnFilled
+      />
       <ImageFullWidth
         url={searchBanners('cd')}
         alt="Calculadora de doces banner"
       />
-      <CallToAction
-        title="Conheça tambem nossa"
-        spotlight="Base de Dados"
-        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet, ante eget gravida pulvinar, erat ligula mattis tortor, id mollis ex libero ac eros. Nulla finibus nulla eu mauris lacinia feugiat. Vestibulum efficitur, lacus id mollis semper, nunc turpis consequat felis, eget mattis dolor nulla eget turpis. Aliquam at augue suscipit, aliquet massa ut, consequat lorem. Quisque facilisis mi eu venenatis lobortis. Morbi molestie lacus quam, at sodales dui lacinia sed."
-        btnName="Acessar a base de dados"
-        btnFunction={() => alert('base de dados')}
-        btnFilled
-      />
-      <ImageFullWidth url={searchBanners('db')} alt="Base de dados banner" />
       <CallToAction
         title="Vai fazer uma festa? Use nossa"
         spotlight="Calculadora de Doces"
         desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet, ante eget gravida pulvinar, erat ligula mattis tortor, id mollis ex libero ac eros. Nulla finibus nulla eu mauris lacinia feugiat. Vestibulum efficitur, lacus id mollis semper, nunc turpis consequat felis, eget mattis dolor nulla eget turpis. Aliquam at augue suscipit, aliquet massa ut, consequat lorem. Quisque facilisis mi eu venenatis lobortis. Morbi molestie lacus quam, at sodales dui lacinia sed."
         btnName="Acessar a Calculadora de Doces"
         btnFunction={() => alert('Calculadora de Doces')}
+        urlToRedirect="https://calculadora.querodocuras.com.br"
         btnFilled
       />
-      <CardContainer>
-        <h2>Veja as últimas postagens do blog</h2>
-        <CardWithPhoto
-          rowDirection="row"
-          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet, ante eget gravida pulvinar, erat ligula mattis tortor, id mollis ex libero ac eros. Nulla finibus nulla eu mauris lacinia feugiat. Vestibulum efficitur, lacus id mollis semper, nunc turpis consequat felis, eget mattis dolor nulla eget turpis. Aliquam at augue suscipit, aliquet massa ut, consequat lorem. Quisque facilisis mi eu venenatis lobortis. Morbi molestie lacus quam, at sodales dui lacinia sed."
-          urlToRedirect="/contato"
-          imgUrl="https://picsum.photos/2000/3000?random=4"
-          imgDesc="Imagem do Card"
-        />
-        <CardWithPhoto
-          rowDirection="row-reverse"
-          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet, ante eget gravida pulvinar, erat ligula mattis tortor, id mollis ex libero ac eros. Nulla finibus nulla eu mauris lacinia feugiat. Vestibulum efficitur, lacus id mollis semper, nunc turpis consequat felis, eget mattis dolor nulla eget turpis. Aliquam at augue suscipit, aliquet massa ut, consequat lorem. Quisque facilisis mi eu venenatis lobortis. Morbi molestie lacus quam, at sodales dui lacinia sed."
-          urlToRedirect="/contato"
-          imgUrl="https://picsum.photos/2000/3000?random=5"
-          imgDesc="Imagem do Card"
-        />
-      </CardContainer>
+      {posts.length !== 0 && (
+        <CardContainer>
+          <h2>Veja as últimas postagens do blog</h2>
+          {posts.map((post, index) => (
+            <CardWithPhoto
+              $inverse={index % 2 === 0}
+              title={post.title}
+              desc={post.content}
+              urlToRedirect={`https://reviews.querodocuras.com.br/post/${post.id}`}
+              imgUrl={post.pics[0]}
+              imgDesc="Imagem do Card"
+            />
+          ))}
+        </CardContainer>
+      )}
       <Footer />
     </>
   );

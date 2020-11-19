@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Container} from './styles';
 
-import Button from '../button';
+import LinkButton from '../LinkButton';
 
 interface CallToActionProps {
   title: string;
@@ -11,23 +11,23 @@ interface CallToActionProps {
   btnName: string;
   btnFunction: () => void;
   btnFilled: boolean;
+  urlToRedirect?: string;
 }
 
 const CallToAction: React.FC<CallToActionProps> = (props) => {
-  const {title, spotlight, desc, btnName, btnFunction, btnFilled} = props;
+  const {title, spotlight, desc, btnName, btnFilled, urlToRedirect} = props;
 
   return (
     <Container>
       <h1>
-        {title} <b>{spotlight}</b>
+        {title} <strong>{spotlight}</strong>
       </h1>
       <p>{desc}</p>
-      <Button
+      <LinkButton
+        href={urlToRedirect}
         name={btnName}
-        _onClick={btnFunction}
-        filled={btnFilled}
-        maxWidth="300px"
-        type="button"
+        $filled={btnFilled}
+        $maxWidth="300px"
       />
     </Container>
   );

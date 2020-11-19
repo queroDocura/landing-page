@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {Colors, Devices} from '../../app/style';
 
 interface PhotoCardProps {
-  rowDirection?: string;
+  $inverse?: boolean;
 }
 
 export const Container = styled.div<PhotoCardProps>`
@@ -28,8 +28,7 @@ export const Container = styled.div<PhotoCardProps>`
 
   @media ${Devices.tablet} {
     height: 25rem;
-    flex-direction: ${(props) =>
-      props.rowDirection !== '' ? props.rowDirection : 'row'};
+    flex-direction: ${(props) => (props.$inverse ? 'row-reverse' : 'row')};
 
     > div:first-child {
       display: block;
@@ -78,7 +77,7 @@ export const Content = styled.div`
     -webkit-box-orient: vertical;
   }
 
-  > div > a {
+  > div > strong {
     color: ${Colors.beige};
   }
 

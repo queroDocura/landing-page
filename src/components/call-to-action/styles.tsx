@@ -5,7 +5,7 @@ export const Container = styled.section`
   width: 100vw;
   height: auto;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 10px 10px 2rem 10px;
   text-align: center;
 
   > h1 {
