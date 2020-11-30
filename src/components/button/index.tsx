@@ -5,7 +5,7 @@ import {Container, Loading} from './styles';
 
 interface Props {
   name: string;
-  _onClick: () => void;
+  _onClick?: () => void;
   filled: boolean;
   maxWidth?: string;
   loading?: boolean;

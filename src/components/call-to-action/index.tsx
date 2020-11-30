@@ -9,7 +9,6 @@ interface CallToActionProps {
   spotlight: string;
   desc: string;
   btnName: string;
-  btnFunction: () => void;
   btnFilled: boolean;
   urlToRedirect?: string;
 }

@@ -41,7 +41,7 @@ export const Navigation = styled.nav`
   align-items: center;
   background-color: transparent;
 
-  > div > img {
+  > a > img {
     width: 10rem;
   }
 

@@ -79,16 +79,6 @@ function LandingPage() {
           />
         </>
       ) : null} */}
-      <ImageFullWidth url={searchBanners('db')} alt="Reviews banner" />
-      <CallToAction
-        title="Conheça tambem nossos"
-        spotlight="Reviews"
-        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet, ante eget gravida pulvinar, erat ligula mattis tortor, id mollis ex libero ac eros. Nulla finibus nulla eu mauris lacinia feugiat. Vestibulum efficitur, lacus id mollis semper, nunc turpis consequat felis, eget mattis dolor nulla eget turpis. Aliquam at augue suscipit, aliquet massa ut, consequat lorem. Quisque facilisis mi eu venenatis lobortis. Morbi molestie lacus quam, at sodales dui lacinia sed."
-        btnName="Ver Reviews"
-        btnFunction={() => alert('base de dados')}
-        urlToRedirect="https://reviews.querodocuras.com.br"
-        btnFilled
-      />
       <ImageFullWidth
         url={searchBanners('cd')}
         alt="Calculadora de doces banner"
@@ -96,15 +86,23 @@ function LandingPage() {
       <CallToAction
         title="Vai fazer uma festa? Use nossa"
         spotlight="Calculadora de Doces"
-        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet, ante eget gravida pulvinar, erat ligula mattis tortor, id mollis ex libero ac eros. Nulla finibus nulla eu mauris lacinia feugiat. Vestibulum efficitur, lacus id mollis semper, nunc turpis consequat felis, eget mattis dolor nulla eget turpis. Aliquam at augue suscipit, aliquet massa ut, consequat lorem. Quisque facilisis mi eu venenatis lobortis. Morbi molestie lacus quam, at sodales dui lacinia sed."
+        desc="Não sabe a quantidade certa para encomendar? Use nossa calculadora e receba uma sugestão de quantos doces você pode precisar. Além disso, te passamos algumas dicas, tudo para te ajudar a montar seu evento."
         btnName="Acessar a Calculadora de Doces"
-        btnFunction={() => alert('Calculadora de Doces')}
         urlToRedirect="https://calculadora.querodocuras.com.br"
+        btnFilled
+      />
+      <ImageFullWidth url={searchBanners('db')} alt="Reviews banner" />
+      <CallToAction
+        title="Não sabe qual doce escolher? Veja e se delicie com os nossos"
+        spotlight="Reviews"
+        desc="Quer saber quais os melhores doces e doceiros do mercado? Está na dúvida de qual encomendar, ou qual sabor é o mais gostoso? Aqui tem uma excelente seleção, com fotos e descrições, te levando direto às melhores opções. Entre e aproveite!"
+        btnName="Ver Reviews"
+        urlToRedirect="https://reviews.querodocuras.com.br"
         btnFilled
       />
       {posts.length !== 0 && (
         <CardContainer>
-          <h2>Veja as últimas postagens do blog</h2>
+          <h2>Veja as últimas postagens</h2>
           {posts.map((post, index) => (
             <CardWithPhoto
               $inverse={index % 2 === 0}

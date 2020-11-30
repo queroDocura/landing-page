@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import LandingPage from '../pages/landing-page';
+import AboutUs from '../pages/AboutUs';
 import Contact from '../pages/contact';
 
 function Router() {
@@ -10,6 +11,7 @@ function Router() {
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/contato" component={Contact} />
+        <Route exact path="/quem-somos" component={AboutUs} />
         <Route path="*" component={() => <h1>404 Page Not Found</h1>} />
       </Switch>
     </BrowserRouter>

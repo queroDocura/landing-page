@@ -13,6 +13,9 @@ export const Container = styled.footer`
     text-align: center;
   }
 
+  > .logo-container > img {
+    width: 8rem;
+  }
   > section > h2 {
     visibility: hidden;
     margin-bottom: 20px;
