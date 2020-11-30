@@ -1,6 +1,7 @@
 import React from 'react';
 
 import NavbarLandingPage from '../../components/navbar-landing-page';
+import Footer from '../../components/footer';
 
 import Header from '../../assets/about-us-pic.jpg';
 
@@ -32,6 +33,7 @@ const AboutUs = () => {
           vocês, mas vem muito mais por aí!
         </p>
       </AboutUsStyle.Container>
+      <Footer />
     </>
   );
 };
