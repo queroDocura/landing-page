@@ -13,7 +13,7 @@ export const Container = styled.footer`
     text-align: center;
   }
 
-  > .logo-container > img {
+  > .logo-container > a > img {
     width: 8rem;
   }
   > section > h2 {

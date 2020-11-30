@@ -43,7 +43,9 @@ function Footer() {
       </section> */}
 
       <section className="logo-container">
-        <img src={LogoWhite} alt="Quero Doçuras Logo" />
+        <Link to="/quem-somos">
+          <img src={LogoWhite} alt="Quero Doçuras Logo" />
+        </Link>
       </section>
       <section>
         <span>© Copyrigth 2020 Quero Doçuras</span>

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
+import {Devices} from '../../app/style';
 
 const Header = styled.header`
   figure {
     width: 100%;
-    max-width: calc(100vw - 10rem);
     max-height: 400px;
     height: 400px;
     margin-bottom: 2rem;
@@ -20,6 +20,11 @@ const Header = styled.header`
 
   h1 {
     font-size: 2rem;
+  }
+
+  @media ${Devices.mobileL} {
+    figure {
+      max-width: calc(100vw - 10rem);
   }
 `;
 

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import NavbarLandingPage from '../../components/navbar-landing-page';
+import NavBarComeback from '../../components/navbar-comeback';
 import Footer from '../../components/footer';
 
 import Header from '../../assets/about-us-pic.jpg';
@@ -10,7 +11,8 @@ import AboutUsStyle from './styles';
 const AboutUs = () => {
   return (
     <>
-      <NavbarLandingPage />
+      {window.screen.width < 768 ? <NavBarComeback /> : <NavbarLandingPage />}
+
       <AboutUsStyle.Container>
         <AboutUsStyle.Header>
           <figure>
