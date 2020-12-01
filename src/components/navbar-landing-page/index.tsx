@@ -16,11 +16,9 @@ const NavbarLandingPage: React.FC = () => {
         <Link to="/">
           <img src={LogoWhiteBg} alt="Logo Quero Doçura" />
         </Link>
+        <a href="https://receitas.querodocuras.com.br">Receitas</a>
         <NavLink to="/quem-somos" activeClassName="selected">
           Quem somos
-        </NavLink>
-        <NavLink to="/contato" activeClassName="selected">
-          Contato
         </NavLink>
       </Navigation>
 

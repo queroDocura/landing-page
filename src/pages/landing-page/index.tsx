@@ -91,6 +91,15 @@ function LandingPage() {
         urlToRedirect="https://calculadora.querodocuras.com.br"
         btnFilled
       />
+      <ImageFullWidth url={searchBanners('rt')} alt="Receitas banner" />
+      <CallToAction
+        title="Gosta de se arriscar na cozinha? Aprenda um montão de"
+        spotlight="Receitas"
+        desc="Reunimos aqui uma série de receitas que não precisam nem de muitos utensílios nem experiência. Ideal para quem curte cozinhar por prazer! E caso queira sugerir alguma doçura, podemos testar para você."
+        btnName="Achar uma receita"
+        urlToRedirect="https://receitas.querodocuras.com.br"
+        btnFilled
+      />
       <ImageFullWidth url={searchBanners('db')} alt="Reviews banner" />
       <CallToAction
         title="Não sabe qual doce escolher? Veja e se delicie com os nossos"

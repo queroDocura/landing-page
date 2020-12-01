@@ -13,15 +13,21 @@ export const Container = styled.footer`
     text-align: center;
   }
 
-  > .logo-container > a > img {
+  > .logo-container > img {
     width: 8rem;
   }
-  > section > h2 {
-    visibility: hidden;
-    margin-bottom: 20px;
+
+  > section > a {
+    color: ${Colors.beige};
   }
 
-  > section > span {
+  > section > a > h2 {
+    visibility: hidden;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  > section > a > span {
     line-height: 2.2rem;
   }
 
@@ -61,7 +67,7 @@ export const Container = styled.footer`
       flex: 0 0 100%;
     }
 
-    > section > h2 {
+    > section > a > h2 {
       visibility: visible;
     }
 
