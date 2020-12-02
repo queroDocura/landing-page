@@ -32,12 +32,12 @@ export const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  > img {
+  > a > img {
     width: 4rem;
   }
 
   @media ${Devices.tablet} {
-    > img {
+    > a > img {
       width: 10rem;
     }
   }

@@ -18,7 +18,9 @@ function NavBarComeback() {
         </Link>
       </div>
       <ImgContainer>
-        <img src={LogoWhite} alt="Logo" />
+        <Link to="/">
+          <img src={LogoWhite} alt="Logo" />
+        </Link>
       </ImgContainer>
     </Container>
   );

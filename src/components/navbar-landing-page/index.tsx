@@ -1,19 +1,18 @@
 import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
 
-import {Container, Background, Navigation, CallToAction} from './styles';
+import {Container, Navigation} from './styles';
 import LogoWhiteBg from '../../assets/logo-white-bg.png';
 
-import Button from '../button';
+// import Button from '../button';
 
 const NavbarLandingPage: React.FC = () => {
   return (
     <Container>
-      <Background />
       <Navigation>
         <a href="https://calculadora.querodocuras.com.br">Calculadora</a>
         <a href="https://reviews.querodocuras.com.br">Reviews</a>
-        <Link to="/">
+        <Link className="img-container" to="/">
           <img src={LogoWhiteBg} alt="Logo Quero Doçura" />
         </Link>
         <a href="https://receitas.querodocuras.com.br">Receitas</a>
@@ -21,24 +20,6 @@ const NavbarLandingPage: React.FC = () => {
           Quem somos
         </NavLink>
       </Navigation>
-
-      <CallToAction>
-        <div>
-          <h1>O melhor portal de doces</h1>
-        </div>
-        <div>
-          <img src={LogoWhiteBg} alt="Logo Quero Doçura" />
-        </div>
-        <div>
-          <Button
-            name="Acessar o Marketplace"
-            type="button"
-            loading={false}
-            _onClick={() => alert('working')}
-            filled
-          />
-        </div>
-      </CallToAction>
     </Container>
   );
 };

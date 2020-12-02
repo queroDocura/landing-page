@@ -48,15 +48,6 @@ function Contact() {
     <>
       <NavBarComeback />
       <Container>
-        <section>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In massa
-            justo, luctus eget leo a, blandit aliquam sem. Aenean non metus sed
-            velit blandit hendrerit quis sed nibh. Quisque at auctor turpis. Nam
-            aliquam ornare enim. Aliquam mauris tortor, varius maximus enim eu,
-            interdum accumsan nunc.
-          </p>
-        </section>
         <Form onSubmit={handleEmailSubmit}>
           <fieldset>
             <legend>Fale Conosco</legend>
