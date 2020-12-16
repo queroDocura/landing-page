@@ -45,6 +45,7 @@ function LandingPage() {
   useEffect(() => {
     firebaseDatabase
       .collection('posts')
+      .orderBy('createdAt', 'desc')
       .limit(2)
       .get()
       .then((response) => {
@@ -66,19 +67,6 @@ function LandingPage() {
         <title>Quero Doçuras</title>
       </Helmet>
       <NavbarLandingPage />
-      {/* {window.innerWidth > 768 ? (
-        <>
-          <ImageFullWidth url={searchBanners('mp')} alt="Marketplace Banner" />
-          <CallToAction
-            title="Acesse nosso"
-            spotlight="MarketPlace"
-            desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet, ante eget gravida pulvinar, erat ligula mattis tortor, id mollis ex libero ac eros. Nulla finibus nulla eu mauris lacinia feugiat. Vestibulum efficitur, lacus id mollis semper, nunc turpis consequat felis, eget mattis dolor nulla eget turpis. Aliquam at augue suscipit, aliquet massa ut, consequat lorem. Quisque facilisis mi eu venenatis lobortis. Morbi molestie lacus quam, at sodales dui lacinia sed."
-            btnName="Acessar o Marketplace"
-            btnFunction={() => alert('marketplace')}
-            btnFilled
-          />
-        </>
-      ) : null} */}
       <ImageFullWidth
         url={searchBanners('cd')}
         alt="Calculadora de doces banner"
