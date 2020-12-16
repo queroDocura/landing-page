@@ -12,7 +12,7 @@ function Footer(): ReactElement {
       <section>
         <a href="https://querodocuras.com.br/contato">
           <h2>Contato</h2>
-          <span className="email-span">analuiza@analuizabritto.com.br</span>
+          <span className="email-span">analuiza@querodocuras.com.br</span>
           <br />
           <span>+55 21 9 9606 8831</span>
           <br />

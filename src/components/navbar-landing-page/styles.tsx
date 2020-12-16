@@ -59,7 +59,7 @@ export const Navigation = styled.nav`
     }
   }
 
-  @media ${Devices.laptop} {
+  @media ${Devices.laptopL} {
     > a {
       font-size: 1.5rem;
     }
