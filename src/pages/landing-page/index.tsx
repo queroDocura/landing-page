@@ -99,7 +99,7 @@ function LandingPage() {
       />
       {posts.length !== 0 && (
         <CardContainer>
-          <h2>Veja as últimas postagens</h2>
+          <h2>Veja os últimos reviews</h2>
           {posts.map((post, index) => (
             <CardWithPhoto
               $inverse={index % 2 === 0}

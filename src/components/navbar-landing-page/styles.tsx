@@ -27,7 +27,6 @@ export const Navigation = styled.nav`
 
   > .img-container {
     display: block;
-    text-align: center;
   }
 
   > .img-container > img {
@@ -41,16 +40,21 @@ export const Navigation = styled.nav`
   @media ${Devices.tablet} {
     display: flex;
     height: 12rem;
-    padding: 30px;
+    padding: 30px 0;
+
+    > .img-container {
+      width: auto;
+    }
 
     > .img-container > img {
       width: 10rem;
     }
 
     > a {
+      width: 165px;
+      text-align: center;
       display: block;
       font-size: 1rem;
-      margin: 0 25px;
     }
 
     > .selected {

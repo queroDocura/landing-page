@@ -11,11 +11,11 @@ const NavbarLandingPage: React.FC = () => {
     <Container>
       <Navigation>
         <a href="https://calculadora.querodocuras.com.br">Calculadora</a>
-        <a href="https://reviews.querodocuras.com.br">Reviews</a>
+        <a href="https://receitas.querodocuras.com.br">Receitas</a>
         <Link className="img-container" to="/">
           <img src={LogoWhiteBg} alt="Logo Quero Doçura" />
         </Link>
-        <a href="https://receitas.querodocuras.com.br">Receitas</a>
+        <a href="https://reviews.querodocuras.com.br">Reviews</a>
         <NavLink to="/quem-somos" activeClassName="selected">
           Quem somos
         </NavLink>
