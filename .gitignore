@@ -33,3 +33,5 @@ yarn-error.log*
 # next.js
 .next/
 out/
+
+yarn.lock
