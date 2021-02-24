@@ -24,30 +24,26 @@
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
   "rules": {
-    "no-use-before-define": "off",
-    "no-console": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "react/jsx-props-no-spreading": "off",
-    "react/prop-types": "off",
-    "react/jsx-filename-extension": [1, {"extensions": [".tsx"]}],
-    "import/prefer-default-export": "off",
-    "camelcase": "off",
-    "@typescript-eslint/ban-types": "off",
-    "@typescript-eslint/ban-ts-comment": "off",
-    "prettier/prettier": "error",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "ts": "never",
-        "tsx": "never"
+      "no-use-before-define": "off",
+      "import/no-unresolved": "off",
+			"react/react-in-jsx-scope": "off",
+			"react/jsx-props-no-spreading": "off",
+			"react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+      "import/prefer-default-export": "off",
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "ts": "never",
+          "tsx": "never"
+        }
+      ]
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": {}
       }
-    ]
-  },
-  "settings": {
-    "import/resolver": {
-      "typescript": {}
     }
-  }
 }
