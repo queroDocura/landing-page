@@ -3,28 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/firebase": "^3.2.1",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "@types/styled-components": "^5.1.2",
-    "autoprefixer": "^10.2.4",
-    "firebase": "^7.20.0",
-    "next": "^10.0.7",
-    "postcss": "^8.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^6.1.0",
+    "next": "^10.0.7",
+    "autoprefixer": "^10.2.4",
+    "firebase": "^7.20.0",
+    "postcss": "^8.2.6",
     "react-icons": "^3.10.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
-    "styled-components": "^5.1.1",
-    "tailwindcss": "^2.0.3",
-    "typescript": "~3.7.2"
+    "tailwindcss": "^2.0.3"
   },
   "scripts": {
     "dev": "next dev",
@@ -45,8 +31,10 @@
     ]
   },
   "devDependencies": {
-    "@types/react-helmet": "^6.1.0",
-    "@types/react-router-dom": "^5.1.5",
+    "@types/firebase": "^3.2.1",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
     "@typescript-eslint/eslint-plugin": "^3.7.1",
     "@typescript-eslint/parser": "^3.7.1",
     "eslint": "^6.6.0",
@@ -58,6 +46,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.5",
     "eslint-plugin-react-hooks": "^4.0.8",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "typescript": "~3.7.2"
   }
 }
