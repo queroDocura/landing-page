@@ -11,7 +11,7 @@ const AboutUs: React.FC = () => {
       <Head>
         <title>Quero Doçuras | Quem Somos</title>
       </Head>
-      <Navbar />
+      <Navbar showBackNavbar />
       <article className="max-w-3xl mx-auto p-4">
         <figure className="block">
           <Image

@@ -4,14 +4,21 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 
-const Navbar: React.FC = () => {
+interface INavbar {
+  showBackNavbar?: boolean;
+}
+
+const Navbar: React.FC<INavbar> = ({showBackNavbar = false}: INavbar) => {
   const {asPath} = useRouter();
 
   const isAboutUs = asPath === '/quem-somos';
 
   return (
     <div className="relative max-w-full">
-      <nav className="flex h-24 text-center text-base md:h-48 lg:text-2xl justify-center items-center box-border px-8 bg-transparent">
+      <nav
+        className={`h-24 text-center text-base md:h-48 lg:text-2xl justify-center items-center box-border px-8 bg-transparent ${
+          showBackNavbar ? 'hidden md:flex' : 'flex'
+        }`}>
         <a
           className="hidden md:block w-44 hover:opacity-50 duration-200"
           href="home">
@@ -47,10 +54,33 @@ const Navbar: React.FC = () => {
             className={`hidden md:block w-44 hover:opacity-50 duration-200 ${
               isAboutUs && 'text-primary font-bold'
             }`}
-            href="home">
+            href="/quem-somos">
             Quem Somos
           </a>
         </Link>
+      </nav>
+      <nav
+        className={`${
+          showBackNavbar ? 'block md:hidden' : 'hidden'
+        } flex justify-between items-center p-2`}>
+        <div>
+          <Link href="/">
+            <a className="flex items-center" href="/">
+              Voltar
+            </a>
+          </Link>
+        </div>
+        <div>
+          <figure className="w-16 md:w-40">
+            <Image
+              src="/logo-white-bg.png"
+              alt="Quero Doçuras"
+              layout="responsive"
+              width="100%"
+              height="100%"
+            />
+          </figure>
+        </div>
       </nav>
     </div>
   );
