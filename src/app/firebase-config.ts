@@ -11,7 +11,14 @@ const config = {
   measurementId: 'G-T75NK6T715',
 };
 
-export const firebaseImpl = firebase.initializeApp(config);
+if (!firebase.apps.length) {
+  try {
+    firebase.initializeApp(config);
+  } catch (error) {
+    console.error('Firebase admin initialization error', error.stack);
+  }
+}
+
 export const firebaseDatabase = firebase.firestore();
 // export const firebaseStorage = firebase.storage();
 // export const firebaseFunctions = firebase.functions();

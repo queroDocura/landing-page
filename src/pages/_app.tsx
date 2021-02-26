@@ -12,6 +12,12 @@ const MyApp: React.FC<AppProps> = ({Component, pageProps}: AppProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#8A7757" />
         <title>Quero Doçuras</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <Component {...pageProps} />
     </>

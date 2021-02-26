@@ -3,6 +3,8 @@ import Image from 'next/image';
 
 import {firebaseDatabase} from '../app/firebase-config';
 
+import Navbar from '../components/Navbar';
+
 interface IBanners {
   lastUpdate?: Date;
   systemTarget: string;
@@ -18,7 +20,7 @@ interface IProps {
 const Home: React.FC<IProps> = ({banners}: IProps) => {
   return (
     <>
-      <h1>Quero Doçuras - Server side rendering - v0.1 new branch test</h1>
+      <Navbar />
       {banners.map((banner) => (
         <Image
           key={banner.id}
