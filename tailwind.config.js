@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   purge: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
@@ -9,6 +11,8 @@ module.exports = {
       sans: ['Montserrat'],
     },
     colors: {
+      black: colors.black,
+      white: colors.white,
       primary: '#BCA276',
       primaryDark: '#8A7757',
       secondary: '#DE7012',
