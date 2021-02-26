@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer: React.FC = () => {
   return (
@@ -16,12 +17,22 @@ const Footer: React.FC = () => {
       </div>
       <div className="w-full md:w-6/12">
         <h2 className="text-xl font-bold m-4">Contato</h2>
-        <a href="asda" className="block m-4">
+        <a
+          href="mailto:quero.docuras@gmail.com"
+          className="block m-4 duration-200 hover:opacity-50">
           analuiza@querodocuras.com.br
         </a>
-        <a href="whatsapp" className="block m-4">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://wa.me/5521996068831?text=Ola%20vim%20do%20Quero%20Docuras"
+          className="block m-4 duration-200 hover:opacity-50">
           +55 21 9 9606 8831
         </a>
+
+        <Link href="/quem-somos">
+          <a className="duration-200 hover:opacity-50">Quem Somos</a>
+        </Link>
       </div>
       <div className="w-full mt-4">
         <span>© Copyrigth 2020 Quero Doçuras</span>

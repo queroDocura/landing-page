@@ -29,10 +29,8 @@ const Navbar: React.FC<INavbar> = ({showBackNavbar = false}: INavbar) => {
           href="home">
           Receitas
         </a>
-        <Link href="/">
-          <a
-            className="w-44 flex justify-center items-center hover:opacity-50 duration-200"
-            href="home">
+        <Link href="/" passHref>
+          <a className="w-44 flex justify-center items-center hover:opacity-50 duration-200">
             <figure className="w-16 md:w-40">
               <Image
                 src="/logo-white-bg.png"
@@ -49,12 +47,11 @@ const Navbar: React.FC<INavbar> = ({showBackNavbar = false}: INavbar) => {
           href="home">
           Reviews
         </a>
-        <Link href="/quem-somos">
+        <Link href="/quem-somos" passHref>
           <a
             className={`hidden md:block w-44 hover:opacity-50 duration-200 ${
               isAboutUs && 'text-primary font-bold'
-            }`}
-            href="/quem-somos">
+            }`}>
             Quem Somos
           </a>
         </Link>
