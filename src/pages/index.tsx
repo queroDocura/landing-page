@@ -18,7 +18,7 @@ interface IProps {
 const Home: React.FC<IProps> = ({banners}: IProps) => {
   return (
     <>
-      <h1>Quero Doçuras - Server side rendering - v0.1</h1>
+      <h1>Quero Doçuras - Server side rendering - v0.1 new branch test</h1>
       {banners.map((banner) => (
         <Image
           key={banner.id}
