@@ -13,7 +13,7 @@ const AboutUs: React.FC = () => {
       </Head>
       <Navbar />
       <article className="max-w-3xl mx-auto p-4">
-        <figure className="h-96 block mb-8">
+        <figure className="block">
           <Image
             src="/ana-britto.jpg"
             alt="Ana Luiza Britto"
@@ -25,7 +25,7 @@ const AboutUs: React.FC = () => {
           />
           <figcaption className="block text-xs">Ana Luiza Britto</figcaption>
         </figure>
-        <h1 className="font-medium text-3xl mb-5">Quem Somos</h1>
+        <h1 className="font-medium text-3xl my-5">Quem Somos</h1>
         <p className="text-lg">
           Desde criança, sou apaixonada por doces e sempre me aventurei na
           cozinha! Já pensei em trabalhar vendendo bolos inúmeras vezes mas
