@@ -7,6 +7,7 @@ class MyDocument extends Document {
       <Html lang="pt">
         <Head>
           <meta httpEquiv="Content-Language" content="pt-br" />
+          <meta name="robots" content="all" />
         </Head>
         <body>
           <Main />
