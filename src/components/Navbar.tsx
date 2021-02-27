@@ -12,6 +12,8 @@ const Navbar: React.FC<INavbar> = ({showBackNavbar = false}: INavbar) => {
   const {asPath} = useRouter();
 
   const isAboutUs = asPath === '/quem-somos';
+  const isRecipes = asPath === '/receitas';
+  const isReviews = asPath === '/reviews';
 
   return (
     <div className="relative max-w-full">
@@ -24,11 +26,14 @@ const Navbar: React.FC<INavbar> = ({showBackNavbar = false}: INavbar) => {
           href="home">
           Calculadora
         </a>
-        <a
-          className="hidden md:block w-44 hover:opacity-50 duration-200"
-          href="home">
-          Receitas
-        </a>
+        <Link href="/receitas" passHref>
+          <a
+            className={`hidden md:block w-44 hover:opacity-50 duration-200 ${
+              isRecipes && 'text-primary font-bold'
+            }`}>
+            Receitas
+          </a>
+        </Link>
         <Link href="/" passHref>
           <a className="w-44 flex justify-center items-center hover:opacity-50 duration-200">
             <figure className="w-16 md:w-40">
@@ -42,11 +47,14 @@ const Navbar: React.FC<INavbar> = ({showBackNavbar = false}: INavbar) => {
             </figure>
           </a>
         </Link>
-        <a
-          className="hidden md:block w-44 hover:opacity-50 duration-200"
-          href="home">
-          Reviews
-        </a>
+        <Link href="/reviews" passHref>
+          <a
+            className={`hidden md:block w-44 hover:opacity-50 duration-200 ${
+              isReviews && 'text-primary font-bold'
+            }`}>
+            Reviews
+          </a>
+        </Link>
         <Link href="/quem-somos" passHref>
           <a
             className={`hidden md:block w-44 hover:opacity-50 duration-200 ${

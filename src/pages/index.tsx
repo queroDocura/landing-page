@@ -42,7 +42,7 @@ const Home: React.FC<IProps> = ({banners}: IProps) => {
         spotlight="Receitas"
         desc="Reunimos aqui uma série de receitas que não precisam nem de muitos utensílios nem experiência. Ideal para quem curte cozinhar por prazer! E caso queira sugerir alguma doçura, podemos testar para você."
         btnName="Achar uma receita"
-        urlToRedirect="https://receitas.querodocuras.com.br"
+        urlToRedirect="/receitas"
         imgUrl={searchBanners('rt')}
         imgAlt="Receitas"
       />
@@ -51,7 +51,7 @@ const Home: React.FC<IProps> = ({banners}: IProps) => {
         spotlight="Reviews"
         desc="Quer saber quais os melhores doces e doceiros do mercado? Está na dúvida de qual encomendar, ou qual sabor é o mais gostoso? Aqui tem uma excelente seleção, com fotos e descrições, te levando direto às melhores opções. Entre e aproveite!"
         btnName="Ver Reviews"
-        urlToRedirect="https://reviews.querodocuras.com.br"
+        urlToRedirect="/reviews"
         imgUrl={searchBanners('db')}
         imgAlt="Reviews"
       />

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Link from 'next/link';
 import Image from 'next/image';
 
 interface ICallToActionProps {
@@ -35,11 +36,12 @@ const CallToAction: React.FC<ICallToActionProps> = (
           {title} <strong>{spotlight}</strong>
         </h1>
         <p className="mb-4 text-lg">{desc}</p>
-        <a
-          className="inline-block w-full md:w-auto bg-primary p-3 rounded-md text-white duration-200 hover:opacity-50"
-          href={urlToRedirect}>
-          {btnName}
-        </a>
+        {/* @ts-ignore */}
+        <Link href={urlToRedirect} passHref>
+          <a className="inline-block w-full md:w-auto bg-primary p-3 rounded-md text-white duration-200 hover:opacity-50">
+            {btnName}
+          </a>
+        </Link>
       </section>
     </section>
   );
