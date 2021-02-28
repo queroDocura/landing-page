@@ -16,7 +16,7 @@ const Navbar: React.FC<INavbar> = ({showBackNavbar = false}: INavbar) => {
   const isReviews = asPath === '/reviews';
 
   return (
-    <div className="relative max-w-full">
+    <header className="relative max-w-full">
       <nav
         className={`h-24 text-center text-base md:h-48 lg:text-2xl justify-center items-center box-border px-8 bg-transparent ${
           showBackNavbar ? 'hidden md:flex' : 'flex'
@@ -87,7 +87,7 @@ const Navbar: React.FC<INavbar> = ({showBackNavbar = false}: INavbar) => {
           </figure>
         </div>
       </nav>
-    </div>
+    </header>
   );
 };
 

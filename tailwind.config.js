@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors');
+const LineClamp = require('@tailwindcss/line-clamp');
 
 module.exports = {
   purge: [
@@ -22,5 +23,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [LineClamp],
 };
