@@ -12,6 +12,7 @@ interface IBlogList {
 
 const BlogList: React.FC<IBlogList> = (props: IBlogList) => {
   const {searchPlaceholder, subtitles, data} = props;
+
   return (
     <main className="max-w-3xl mx-auto mb-8">
       <section className="text-center mb-8 p-2">
